@@ -9,3 +9,7 @@
     background-color: rgb(9, 123, 189);
     color: whitesmoke;
 }
+.water-cont div {
+    overflow-y: scroll;
+    height: 94%;
+}

@@ -3,5 +3,11 @@
     width: 97%;
     height: 35vh;
     border: 1px solid black;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+
+.img-cont div {
+    padding: 0 12px;
+    height: 90%;
+    text-align: center;
 }

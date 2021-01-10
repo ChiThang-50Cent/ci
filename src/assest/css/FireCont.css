@@ -9,3 +9,8 @@
     background-color: orange;
     color: whitesmoke;
 }
+
+.fire-cont div {
+    overflow-y: scroll;
+    height: 94%;
+}

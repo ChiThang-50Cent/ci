@@ -1,10 +1,16 @@
 import '../assest/css/ImgCont.css'
+import ImgPoke from './imgPoke.jsx'
+import pokes from '../data.js'
 
-function ImgCont(){
+const pokeList = pokes.map(poke => <ImgPoke {...poke} />)
+
+function ImgCont(props){
     return(
         <div className="img-cont">
             <h3>Pokemon</h3>
-            <ImgCont url='logo192.png' name='logo' />
+            <div onDrop={props.drop} onDragOver={props.allowDrop}>
+                {pokeList}
+            </div>
         </div>
     )
 }
