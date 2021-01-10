@@ -5,7 +5,7 @@ import '../assest/css/emol.css'
 
 function EmojiList(props) {
     const fEmoL = emojiList.filter(val => {
-        if (val.keywords.indexOf(props.inp) !== -1){
+        if (val.keywords.includes(props.inp)){
             return true
         } else {
             return false
