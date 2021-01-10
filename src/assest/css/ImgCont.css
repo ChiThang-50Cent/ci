@@ -1,0 +1,7 @@
+.img-cont{
+    margin: auto;
+    width: 97%;
+    height: 35vh;
+    border: 1px solid black;
+    overflow: scroll;
+}

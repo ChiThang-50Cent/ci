@@ -1,0 +1,11 @@
+.fire-cont {
+    margin: 12px auto;
+    width: 30%;
+    height: 58vh;
+    border: 2px solid orange;
+}
+
+.fire-cont h3 {
+    background-color: orange;
+    color: whitesmoke;
+}

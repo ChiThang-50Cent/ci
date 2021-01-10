@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import FireCont from './component/FireCont';
+import GrassCont from './component/GrassCont';
+import ImgCont from './component/ImgCont.jsx';
+import WaterCont from './component/WaterCont';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='game-cont'>
+      <ImgCont />
+      <div className='type-cont'>
+        <GrassCont />
+        <WaterCont />
+        <FireCont />
+      </div>
     </div>
   );
 }

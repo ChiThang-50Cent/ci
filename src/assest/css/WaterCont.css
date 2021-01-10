@@ -1,0 +1,11 @@
+.water-cont {
+    width: 30%;
+    margin: 12px auto;
+    height: 58vh;
+    border: 2px solid rgb(9, 123, 189);
+}
+
+.water-cont h3 {
+    background-color: rgb(9, 123, 189);
+    color: whitesmoke;
+}

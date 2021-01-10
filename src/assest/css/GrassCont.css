@@ -1,0 +1,11 @@
+.grass-cont{
+    margin: 12px auto;
+    height: 58vh;
+    width: 30%;
+    border: 2px solid mediumseagreen;
+}
+
+.grass-cont h3 {
+    background-color: mediumseagreen;
+    color: whitesmoke;
+}
