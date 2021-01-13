@@ -2,7 +2,11 @@ import '../assest/css/ImgCont.css'
 import ImgPoke from './imgPoke.jsx'
 import pokes from '../data.js'
 
-const pokeList = pokes.map(poke => <ImgPoke {...poke} />)
+let pokeList = pokes.map((poke, index) => {
+    poke.id = index
+    return poke
+})
+pokeList = pokeList.map(poke => <ImgPoke {...poke} key={poke.id} />)
 
 function ImgCont(props){
     return(
