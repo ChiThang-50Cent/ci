@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import  from '../src/ultis/ultis.js'
+import showInfo from '../src/ultis/ultis.js'
 
 function App() {
+  {showInfo()}
   return (
     <div className="App">
       <header className="App-header">
