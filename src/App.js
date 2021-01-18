@@ -1,31 +1,31 @@
 import './App.css';
 import React from 'react'
-import EmojiList from './component/EmojiList.jsx'
-import SearchBar from './component/SearchBar.jsx';
-import Header from './component/Header.jsx'
-
-
+import SearchBar from './component/searchBar.jsx';
+import BookList from './component/BookList.jsx'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      inp: ''
+      books: []
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.keyDown = this.keyDown.bind(this)
   }
-  handleChange(event) {
-    console.log(event)
-    this.setState({ inp: event.target.value  })
+  keyDown(ev) {
+    if (ev.keyCode === 13) {
+      fetch(`https://www.googleapis.com/books/v1/volumes?q=${ev.target.value}`)
+        .then(res => res.json())
+        .then(data => { this.setState({ books: data.items }) })
+    }
   }
   render() {
     return (
-      <div>
-        <Header />
-        <SearchBar handleChange={this.handleChange} />
-        <EmojiList inp={this.state.inp} />
+      <div style={{
+        width: '98vw'
+      }}>
+        <SearchBar keyDown={this.keyDown} />
+        <BookList books={this.state.books ? this.state.books : []} />
       </div>
-
     );
   }
 }

@@ -1,12 +1,20 @@
-import '../assest/css/searchBar.css'
+import React from 'react'
+
+const style = {
+    width: '100%',
+    margin: '12px',
+    padding: '8px'
+}
 
 function SearchBar(props) {
     return (
-        <div className="search-bar">
-            <input type="text" onChange={props.handleChange} />
-        </div>
+        <input
+            type="text"
+            placeholder="Book Name?"
+            style={style}
+            onKeyDown={props.keyDown}
+        />
     )
-
 }
 
 export default SearchBar
