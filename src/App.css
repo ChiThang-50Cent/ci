@@ -17,3 +17,39 @@ a {
   text-decoration: unset;
   margin-left: 50vw;
 }
+
+.app {
+  display: flex;
+}
+
+.info {
+  width: 25vw;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.info img {
+  height: 40%;
+  width: 40%;
+}
+
+.info div {
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.todoList {
+  width: 75vw;
+  height: 100vh;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.todo {
+  height: 30%;
+  width: 45%;
+  border: 1px solid black;
+  margin: 20px;
+}

@@ -42,17 +42,34 @@ export function signIn(userName, passWord) {
         .where('passWord', '==', passWord)
         .get()
         .then(querySnapshot => {
+            let userId
             if (querySnapshot.empty){
-                throw new Error('Uid or Pass wrong')
+                userId = null
+            } else {
+                userId = querySnapshot.docs[0].id;
             }
-            let user = querySnapshot.docs[0].data();
-            return user
-        })
-        .then(user => {
-            console.log(user.userName)
+            resolve(userId)
         })
         .catch(err => {
             console.log(err)
         })
+    })
+}
+export async function addTodo(){
+    
+}
+export async function getTodo(userId){
+    
+    return await db.collection('todo')
+    .where('userId', '==', userId)
+    .get()
+    .then(querySnapshot => {
+        let data = []
+        querySnapshot.forEach(doc => {
+           data.push({
+               id: doc.id,
+               ...doc.data()})
+        })
+        return data
     })
 }
