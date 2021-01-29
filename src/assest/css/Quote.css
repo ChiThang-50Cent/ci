@@ -1,0 +1,46 @@
+
+  
+  .quote {
+    height: 65%;
+    width: 80%;
+    margin: 8vh auto;
+  }
+
+  .quote img {
+    height: 40px ;
+    border: 1px solid;
+    margin-left: 15px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  .quote .name-date p {
+    font-size: 10px;
+  }
+  
+  .quote button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    margin: 6px 0;
+    width: 100%;
+  }
+  
+  .info {
+    display: flex;
+    margin-top: 5px;
+  }
+  
+  .quote-text {
+    border: 1px solid;
+    height: 20rem;
+    width: 35rem;
+    margin: auto;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 30px;
+  }

@@ -1,0 +1,63 @@
+.login {
+    margin: auto;
+    margin-top: 18vh;
+    width: 25vw;
+    border: 1px solid;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 3px 5px black;
+}
+
+#signup {
+    margin-top: 14vh;
+}
+
+#signup h1 {
+    margin: 20px;
+}
+
+.login h1 {
+    text-align: center;
+    margin: 40px;
+}
+
+.login p {
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login p a {
+    text-decoration: none;
+}
+
+.login p a:visited {
+    color: chocolate;
+}
+
+.login label {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.login input {
+    width: 100%;
+    height: 35px;
+    margin: 14px 0;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.login input[type='submit'] {
+    width: 50%;
+    margin-left: 25%;
+    height: 40px;
+    font-size: 20px;
+    background-color:rgb(151, 196, 238);
+    outline: none;
+    border-radius: 5px;
+}
+
+.login input[type='submit']:hover {
+    opacity: 0.7;
+}
