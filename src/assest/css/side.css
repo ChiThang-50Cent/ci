@@ -1,0 +1,40 @@
+.side {
+    width: 314px;
+    height: 100vh;
+    border: 1px solid;
+}
+.side-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+
+.side-info h2 {
+    margin: auto;
+}
+
+.side-info img {
+    height: 80px;
+    margin-left: 20px ;
+}
+
+.search-bar {
+    text-align: center;
+    margin: 36px auto;
+}
+
+.search-bar input {
+    height: 35px;
+    width: 80%;
+    border-radius: 20px;
+    padding: 12px;
+    outline: none;
+    border: 1px solid;
+    font-size: 16px;
+}
+
+.user-container {
+    margin: 36px 12px;
+    height: 70vh;
+    overflow-y: scroll;
+}

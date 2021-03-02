@@ -1,0 +1,16 @@
+.user {
+    display: flex;
+    margin: 12px;
+}
+
+.image img {
+    height: 40px;
+}
+
+.image {
+    margin: auto 8px;
+}
+
+.time {
+    font-size: 10px;
+}
