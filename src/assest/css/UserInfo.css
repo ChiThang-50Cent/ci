@@ -1,0 +1,17 @@
+.info {
+    display: flex;
+    padding: 12px;
+  }
+
+.info img {
+    height: 5vh;
+    width: 5vh;
+    border: 1px solid;
+    margin-left: 15px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.info .name-date p {
+    font-size: 10px;
+  }

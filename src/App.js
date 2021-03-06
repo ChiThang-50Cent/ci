@@ -5,36 +5,69 @@ import Side from './component/side'
 import Main from './component/main'
 import Login from './component/login'
 import Signup from './component/SignUp';
+import Profile from './component/Profile.jsx'
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      'uid' : null
+      quotes: []
     }
   }
-  componentDidMount(){
-    let uid = localStorage.getItem('uid')
-    if(uid !== null && this.state.uid !== null){}
+  componentDidMount() {
+    fetch('https://quote-garden.herokuapp.com/api/v3/quotes')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          quotes: data.data
+        })
+      })
   }
   render() {
-    const Router = {
-      '/': <div className="App">
-        <Head />
-        <div className='body'>
-          <Side />
-          <Main />
-          <Side />
-        </div>
-      </div>,
-      '/login': <Login />,
-      '/signup': <Signup />
-    }
-
     return (
-      <div className="App">
-        {Router[window.location.pathname]}
-      </div>
+      <Router >
+        <div className="App">
+          <Switch>
+            <Route exact path='/'>
+              <>
+                <Head />
+                <div className='body'>
+                  <Side style='left' />
+                  <div className='cont'>
+                    <Main quotes={this.state.quotes} />
+                  </div>
+                  <Side style='right' />
+                </div>
+              </>
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
+            <Route path='/signup'>
+              <Signup />
+            </Route>
+            <Route path='/profile'>
+              <>
+                <Head />
+                <div className='body'>
+                  <Side style='left' />
+                  <div className='cont'>
+                    <Profile />
+                  </div>
+                  <Side style='right' />
+                </div>
+              </>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

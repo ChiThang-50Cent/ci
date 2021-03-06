@@ -1,0 +1,43 @@
+.add-quote {
+    margin-top: 2vh;
+    box-shadow: 1px 1px 8px dimgray;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+}
+
+.text-area {
+    text-align: center;
+}
+
+.text-area textarea {
+    font-family: monospace;
+    font-weight: 450;
+    padding: 12px;
+    resize: none;
+    border-radius: 10px;
+    outline: none;
+    width: 56vw;
+    height: 8vh;
+    font-size: 2vh;
+}
+
+.btn {
+    text-align: right;
+    margin: 0 1vw;
+}
+
+#post-btn {
+    width: 10vw;
+    height: 3vh;
+    outline: none;
+    margin-bottom: 6px;
+    margin-right: 14px;
+    font-size: 2vh;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+
+#post-btn:hover {
+    background-color:  rgb(217, 221, 222);
+    color: rgb(53, 66, 70);
+}

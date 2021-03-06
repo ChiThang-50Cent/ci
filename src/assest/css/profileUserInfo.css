@@ -1,0 +1,48 @@
+.profileUserInfo {
+    border-radius: 8px;
+    box-shadow: 1px 1px 15px dimgray;
+    width: 60vw;
+    height: 55vh;
+    position: relative;
+    top: 0;
+}
+
+.profileAva {
+    position: absolute;
+    top: 24vh;
+    z-index: 2;
+    width: 12vw;
+    height: 12vw;
+    left: 24vw;
+}
+
+.profileAva img{
+    width: 12vw;
+    border-radius: 50%;
+    border: 5px solid silver;
+    box-shadow: 2px 2px 10px slategray;
+}
+
+.profileCover {
+    width: 60vw;
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.profileCover img {
+    width: 60vw;
+    height: 40vh;
+}
+
+.profileUserName {
+    width: 20vw;
+    position: absolute;
+    bottom: 2vh;
+    left: 20vw;
+}
+
+.profileUserName h3 {
+    text-align: center;
+}

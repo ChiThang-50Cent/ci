@@ -1,0 +1,11 @@
+.side-quote {
+    width: 18vw;
+    height: 92vh;
+    position: fixed;
+    margin: 1vw;
+}
+.mini-quote {
+    height: 40%;
+    width: 80%;
+    margin: 4vh auto;
+}

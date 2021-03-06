@@ -29,7 +29,7 @@ export default class Signup extends React.Component {
             SignUp(this.state)
             .then(data => {
                 localStorage.setItem('uid', data)
-                window.location.href = '/'
+                window.location.href = '/login'
             })
         }
 

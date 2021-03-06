@@ -21,10 +21,11 @@ export default class Login extends React.Component {
         ev.preventDefault()
         LoginUltis(this.state)
         .then(id => {
-            localStorage.setItem('uid', id)
+            if(id != undefined) {
+                localStorage.setItem('uid', id)
             window.location.href = '/'
+            }         
         })
-        
     }
     render() {
         return (

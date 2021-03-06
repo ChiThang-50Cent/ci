@@ -1,0 +1,67 @@
+.head {
+    position: fixed;
+    top: 0;
+    height: 8vh;
+    width: 100%;
+    background-color: lightblue;
+    z-index: 3;
+}
+  
+.menu {
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+}
+
+.menu h2 {
+    width: 8vw;
+    margin: auto;
+    margin-left: 3vw;
+}
+
+.menu li {
+    margin: auto;
+}
+
+.menu li a {
+    display: block;
+    padding: 2vh;
+    text-decoration: none;
+    width: 12vh;
+    font-size: 2vh;
+}
+
+.menu li a:visited {
+    color: unset;
+}
+
+.menu .search-bar {
+    width: 100%;
+    text-align: left;
+}
+
+.menu .search-bar input {
+    width: 20vw;
+    height: 4vh;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    outline: none;
+}
+
+.search-field {
+    position: fixed;
+    top: 8vh;
+    width: 33vw;
+    height: 34vw;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px dimgray;
+}
+
+.user-search a {
+    text-decoration: none;
+}

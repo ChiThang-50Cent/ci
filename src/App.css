@@ -1,53 +1,25 @@
-.head {
-  height: 8vh;
-  background-color: lightblue;
-}
-
-.menu {
-  height: 100%;
-  list-style-type: none;
-  display: flex;
-}
-
-.menu h2 {
-  width: 50vw;
-  margin: auto 80px;
-}
-
-.menu li {
-  margin: auto;
-}
-
-.menu li a {
-  padding: 18px;
-  text-decoration: none;
-}
-
-.menu li a:visited {
-  color: unset;
-}
-
 .body {
   display: flex;
+  margin-top: 8vh;
+  z-index: 1;
+  background-color: rgb(238, 238, 238);
 }
 
-.main, .quote, .mini-quote, .side-quote {
-  border: 1px solid #000000;
+html::-webkit-scrollbar {
+  display: none;
 }
 
-.mini-quote {
-  height: 40%;
-  width: 80%;
-  margin: 4vh auto;
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .main {
   width: 60vw;
-  height: 92vh;
-  overflow-y: auto;
 }
 
-.side-quote {
-  width: 20vw;
-  height: 92vh;
+.cont {
+  margin-left: 20vw;
 }
+
