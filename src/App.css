@@ -1,11 +1,10 @@
+#pop{
+    margin-top: 40vh;
+}
 #pop h3{
     text-align: center;
 }
 
 h4 {
     text-align: center;
-}
-
-#pop {
-    display: none;
 }

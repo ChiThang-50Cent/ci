@@ -8,13 +8,16 @@ export default class Ans extends Component {
     }
     changeColor(){
         if(this.props.answer !== this.props.cra){
-            document.getElementById(this.props.answer).style.backgroundColor = 'red'
+            document.getElementById(this.props.answer).classList.add('red')
             this.props.handleClick(0)
         } else {
-            document.getElementById(this.props.answer).style.backgroundColor = 'green'
+            document.getElementById(this.props.answer).classList.add('green')
             this.props.handleClick(10)
         }
-        setTimeout(()=>{document.getElementById(this.props.answer).style.backgroundColor = 'unset'}, 700)
+        setTimeout(()=>{
+            document.getElementById(this.props.answer).classList.remove('red')
+            document.getElementById(this.props.answer).classList.remove('green')
+            }, 700)
     }
     render() {
         return (
