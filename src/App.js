@@ -43,7 +43,7 @@ export default class App extends Component {
             isPlaying: false,
             score: prev.score + score
           }))
-          }, 800)
+          }, 900)
           
         }
       }
