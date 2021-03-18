@@ -18,7 +18,9 @@ export default class AnsCont extends Component {
 
     render() {
         let list = this.props.incorrect_answers || []
-        list.push(this.props.correct_answer)
+        if(list.length == 3){
+            list.push(this.props.correct_answer)
+        }
         list = shufer(list)
         
         return (

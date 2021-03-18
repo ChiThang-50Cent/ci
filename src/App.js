@@ -27,15 +27,19 @@ export default class App extends Component {
   handleClick(score) {
     if (this.state.stt < this.state.listQuiz.length - 1) {
       setTimeout(() => {
-        this.setState(prev => {
-          return {
-            ...prev,
+        this.setState(prev => (
+          {
             stt: prev.stt + 1,
             score : prev.score + score
           }
-        })
-      }, 1000)
+        ))
+      }, 700)
     } else {
+      if(this.state.stt == this.state.listQuiz.length-1){
+        this.setState(prev => ({
+          score : prev.score + score
+        }))
+      }
       document.getElementById('pop').style.display = 'block'
     }
   }

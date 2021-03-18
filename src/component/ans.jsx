@@ -14,7 +14,7 @@ export default class Ans extends Component {
             document.getElementById(this.props.answer).style.backgroundColor = 'green'
             this.props.handleClick(10)
         }
-        setTimeout(()=>{document.getElementById(this.props.answer).style.backgroundColor = 'unset'}, 1000)
+        setTimeout(()=>{document.getElementById(this.props.answer).style.backgroundColor = 'unset'}, 700)
     }
     render() {
         return (
