@@ -25,10 +25,10 @@
 
 .menu li a {
     display: block;
-    padding: 2vh;
     text-decoration: none;
     width: 12vh;
     font-size: 2vh;
+    padding: 1vh;
 }
 
 .menu li a:visited {

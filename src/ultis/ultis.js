@@ -5,7 +5,7 @@ import firebase from 'firebase/app'
 try {
     firebase.initializeApp(firebaseConfig)
 } catch (e) {
-    console.log('install')
+    console.log(e.message)
 }
 
 const db = firebase.firestore()
@@ -165,3 +165,86 @@ export async function searchUser(userName) {
         alert(err)
     }
 }
+
+export async function getChatSide(userId) {
+    try {
+        return await db.collection('conversations')
+            .where('participants', 'array-contains', userId)
+            .get()
+            .then(querySnapShot => {
+                if (!querySnapShot.empty) {
+                    let participants = []
+                    querySnapShot.forEach(part => {
+                        let parts = part.data().participants
+                        parts = parts.filter(pa => {
+                            if (pa === userId) {
+                                return false
+                            }
+                            return true
+                        })
+                        participants.push({ parts, conversationId: part.id })
+                    })
+                    return participants
+                } else {
+                    return []
+                }
+            })
+            .then((participants) => {
+                const conversations = participants.map(async user => {
+                    if (user.parts.length === 1) {
+                        return getUserInfo(user.parts[0])
+                            .then(data => {
+                                return {
+                                    ...data,
+                                    conversationId: user.conversationId
+                                }
+                            })
+                    }
+                })
+                if (participants.length !== 0) {
+                    return Promise.all(conversations)
+                        .then(data => {
+                            return data
+                        })
+                } else {
+                    return []
+                }
+
+            })
+    } catch (e) {
+        console.log(e.message)
+    }
+}
+
+export function getMessage(conversationId, listener) {
+    try {
+        db.collection('messages')
+            .where('conversationId', '==', conversationId)
+            .orderBy('createAt')
+            .limit(20)
+            .onSnapshot((docs) => {
+                let messages = []
+                docs.forEach(doc => {
+                    messages.push(doc.data())
+                })
+                listener(messages)
+            })
+    } catch (err) {
+        console.log(err.message)
+    }
+}
+
+export function sendMessage(conversationId, cont, send) {
+    try {
+        const time = firebase.firestore.Timestamp.fromDate(new Date())
+        db.collection('messages')
+        .add({
+             'cont' : cont,
+             'conversationId' : conversationId,
+             'send' : send, 
+             'createAt' :  time
+        })
+    } catch (er) {
+        console.log(er.message)
+    }
+} 

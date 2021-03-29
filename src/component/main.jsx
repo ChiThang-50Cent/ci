@@ -3,9 +3,6 @@ import Quote from './Quote'
 
 
 class Main extends React.Component {
-    constructor(props){
-        super(props)
-    }
     render(){
         let date = new Date()
         date = date.toDateString()

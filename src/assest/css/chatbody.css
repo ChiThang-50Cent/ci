@@ -1,0 +1,31 @@
+.chatting-body {
+    height: 85vh;
+}
+
+.chatting-body span {
+    border-radius:16px ;
+    padding: 6px 12px;
+    font-size: 14px;
+    margin: 1vh 2vh;
+    max-width: 320px;
+}
+
+.chatting-body .left {
+    text-align: left;
+    padding: 3px 12px;
+    margin-top: 1vh;
+}
+
+.chatting-body .right {
+    text-align: right;
+    padding: 3px 12px;
+    margin-top: 1vh;
+}
+
+.chatting-body .right span {
+    background-color: cornflowerblue;
+}
+
+.chatting-body .left span {
+    background-color: royalblue;
+}

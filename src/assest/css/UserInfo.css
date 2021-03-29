@@ -14,4 +14,9 @@
 
 .info .name-date p {
     font-size: 10px;
-  }
+}
+
+.selected {
+    border-radius: 10px;
+    background-color: gray;
+}

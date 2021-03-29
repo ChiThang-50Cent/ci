@@ -13,6 +13,7 @@ import {
   Link,
   Switch
 } from 'react-router-dom'
+import Chat from './component/Chat';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,42 +33,47 @@ class App extends React.Component {
   }
   render() {
     return (
-      <Router >
-        <div className="App">
-          <Switch>
-            <Route exact path='/'>
-              <>
-                <Head />
-                <div className='body'>
-                  <Side style='left' />
-                  <div className='cont'>
-                    <Main quotes={this.state.quotes} />
+      <React.StrictMode>
+        <Router >
+          <div className="App">
+            <Switch>
+              <Route exact path='/'>
+                <>
+                  <Head />
+                  <div className='body'>
+                    <Side style='left' />
+                    <div className='cont'>
+                      <Main quotes={this.state.quotes} />
+                    </div>
+                    <Side style='right' />
                   </div>
-                  <Side style='right' />
-                </div>
-              </>
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route path='/signup'>
-              <Signup />
-            </Route>
-            <Route path='/profile'>
-              <>
-                <Head />
-                <div className='body'>
-                  <Side style='left' />
-                  <div className='cont'>
-                    <Profile />
+                </>
+              </Route>
+              <Route path='/login'>
+                <Login />
+              </Route>
+              <Route path='/signup'>
+                <Signup />
+              </Route>
+              <Route path='/profile'>
+                <>
+                  <Head />
+                  <div className='body'>
+                    <Side style='left' />
+                    <div className='cont'>
+                      <Profile />
+                    </div>
+                    <Side style='right' />
                   </div>
-                  <Side style='right' />
-                </div>
-              </>
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+                </>
+              </Route>
+              <Route path='/chat'>
+                <Chat />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </React.StrictMode>
     );
   }
 }

@@ -27,27 +27,32 @@ export default class Signup extends React.Component {
             alert(`Password doesn't match`)
         } else {
             SignUp(this.state)
-            .then(data => {
-                localStorage.setItem('uid', data)
-                window.location.href = '/login'
-            })
+                .then(data => {
+                    localStorage.setItem('uid', data)
+                    window.location.href = '/login'
+                })
         }
 
     }
     render() {
-        return (
-            <div className='login' id='signup'>
-                <h1>Sign Up</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Username</label><br />
-                    <input type="text" name="userName" onChange={this.handleChange} required placeholder='Username' /><br />
-                    <label>Password</label><br />
-                    <input type="password" name="passWord" onChange={this.handleChange} required placeholder="More than 6 characters" /><br />
-                    <label>Repeat Password</label><br />
-                    <input type="password" name="RepeatPass" onChange={this.handleChange} required placeholder='Repeat Password' /><br />
-                    <input type="submit" value="Sign Up" />
-                </form>
-            </div>
-        )
+        if (localStorage.getItem('uid') === null) {
+            return (
+                <div className='login' id='signup'>
+                    <h1>Sign Up</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>Username</label><br />
+                        <input type="text" name="userName" onChange={this.handleChange} required placeholder='Username' /><br />
+                        <label>Password</label><br />
+                        <input type="password" name="passWord" onChange={this.handleChange} required placeholder="More than 6 characters" /><br />
+                        <label>Repeat Password</label><br />
+                        <input type="password" name="RepeatPass" onChange={this.handleChange} required placeholder='Repeat Password' /><br />
+                        <input type="submit" value="Sign Up" />
+                    </form>
+                </div>
+            )
+        } else {
+            window.location.href = '/'
+        }
     }
 }
+
