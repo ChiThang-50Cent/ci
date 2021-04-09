@@ -3,6 +3,7 @@ import '../assest/css/chatarea.css'
 import UserInfo from './userInfo'
 import { getMessage, sendMessage } from '../ultis/ultis.js'
 import ChatBody from './ChatBody'
+import { Link } from 'react-router-dom'
 
 function getId(converObj, Id) {
     for (const numer in converObj) {
@@ -37,7 +38,7 @@ export default class Chatarea extends React.Component {
                 })
             }
         } else {
-            if (this.props !== prevProps) {
+            if (this.props !== prevProps && this.props['0'] !== undefined) {
                 this.setState({
                     chater: this.props['0']
                 }, () => {
@@ -86,10 +87,10 @@ export default class Chatarea extends React.Component {
                     </div>
                     <div className='function-icon'>
                         <ul className='icons'>
-                            <li><a href='#1'><i className="fa fa-phone" aria-hidden="true"></i></a></li>
-                            <li><a href='#2'><i className="fa fa-video-camera" aria-hidden="true"></i></a></li>
-                            <li><a href='#3'><i className="fa fa-search" aria-hidden="true"></i></a></li>
-                            <li><a href='#4'><i className="fa fa-ellipsis-v" aria-hidden="true"></i></a></li>
+                            <li><Link to='#1'><i className="fa fa-phone" aria-hidden="true"></i></Link></li>
+                            <li><Link to='#2'><i className="fa fa-video-camera" aria-hidden="true"></i></Link></li>
+                            <li><Link to='#3'><i className="fa fa-search" aria-hidden="true"></i></Link></li>
+                            <li><Link to='#4'><i className="fa fa-ellipsis-v" aria-hidden="true"></i></Link></li>
                         </ul>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import UserInfo from './userInfo'
 import { getUserInfo, searchUser } from '../ultis/ultis.js'
 import '../assest/css/head.css'
+import { Link } from 'react-router-dom'
 
 export class Head extends React.Component {
     constructor(props) {
@@ -68,22 +69,22 @@ export class Head extends React.Component {
         let item
         if (this.state.uid != null) {
             item = <>
-                <li><a href='#' onClick={this.logout}>Log Out</a></li>
-                <li><a href='#' onClick={this.goToProfile}
+                <li><Link to='#' onClick={this.logout}>Log Out</Link></li>
+                <li><Link to='#' onClick={this.goToProfile}
                     style={{
                         width: 'auto',
                         padding: '0px 10px'
                     }}>
                     <UserInfo {...this.state.userInfo}
                         style={{ marginTop: '0px' }} />
-                </a></li>
+                </Link></li>
             </>
         } else {
-            item = <li><a href="/login" >Log In</a></li>
+            item = <li><Link to="/login" >Log In</Link></li>
         }
 
         const users = this.state.userList.map((user)=>{
-            return <><a className='user-search' href={'/profile/'+ user.id}><UserInfo {...user} key={user.id} /></a><hr/></>
+            return <><Link className='user-search' to={'/profile/'+ user.id}><UserInfo {...user} key={user.id} /></Link><hr/></>
         })
         return (
             <div className='head'>
@@ -92,8 +93,8 @@ export class Head extends React.Component {
                     <li className='search-bar'><input id='input' type="text"
                         placeholder='User Search'
                         onClick={this.performField} onChange={this.search} /></li>
-                    <li><a href="/">New</a></li>
-                    <li><a href="/favourQuote">Favour</a></li>
+                    <li><Link to="/">New</Link></li>
+                    <li><Link to="/favourQuote">Favour</Link></li>
                     <>{
                         item
                     }</>

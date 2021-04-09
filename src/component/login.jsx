@@ -1,6 +1,7 @@
 import React from 'react'
 import '../assest/css/Login.css'
 import { LoginUltis } from '../ultis/ultis'
+import {Link} from 'react-router-dom'
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -39,7 +40,7 @@ export default class Login extends React.Component {
                         <input type="password" name="passWord" onChange={this.handleChange} required /><br />
                         <input type="submit" value="Log In" />
                     </form>
-                    <p>Don't have account? <a href="/signup">Sign Up</a></p>
+                    <p>Don't have account? <Link to="/signup">Sign Up</Link></p>
                 </div>
             )
         } else {
